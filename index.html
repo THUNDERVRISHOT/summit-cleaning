@@ -153,6 +153,11 @@ nav a:hover { color: var(--primary); }
     border-radius: 28px;
     margin-bottom: 40px;
     border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.05);
 }
 
 .notice-box {
@@ -214,6 +219,23 @@ nav a:hover { color: var(--primary); }
     transition: 0.3s ease-out;
     color: var(--text-muted);
     font-size: 15px;
+}
+
+/* --- BADGES --- */
+.badge-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.pay-badge {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* --- FAB --- */
@@ -324,12 +346,20 @@ input[type="number"] {
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">Do I need to be home? <span>+</span></div>
             <div class="faq-answer">
-                <p>If paying via <strong>CashApp</strong>, no! If paying <strong>Cash</strong>, you'll need to be present or leave it in a safe spot (like under the doormat) and let us know.</p>
+                <p>If paying via <strong>Venmo</strong> or <strong>CashApp</strong>, no! If paying with <strong>Cash</strong>, you'll need to be present or leave it in a safe spot (like under the doormat) and let us know ahead of time.</p>
             </div>
         </div>
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">What payments do you take? <span>+</span></div>
-            <div class="faq-answer"><p>We accept <strong>Cash</strong> and <strong>CashApp ($ThunderFr)</strong>. We do not take Venmo.</p></div>
+            <div class="faq-answer">
+                <p>We accept <strong>Venmo (@Damien_801)</strong>, <strong>CashApp ($ThunderFr)</strong>, and <strong>Cash</strong>.</p>
+            </div>
+        </div>
+        
+        <div class="badge-container">
+            <div class="pay-badge" style="color: #008cff;">🔵 Venmo Accepted</div>
+            <div class="pay-badge" style="color: #00d632;">🟢 CashApp Accepted</div>
+            <div class="pay-badge" style="color: #fbbf24;">💵 Cash Accepted</div>
         </div>
     </div>
 
@@ -346,7 +376,7 @@ input[type="number"] {
                 marginwidth="0" 
                 src="https://maps.google.com/maps?q=Lehi,UT&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 style="filter: invert(90%) hue-rotate(180deg) contrast(90%);">
-            </iframe>
+            </table>
         </div>
     </div>
 
